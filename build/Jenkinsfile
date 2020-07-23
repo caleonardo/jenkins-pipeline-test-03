@@ -6,7 +6,7 @@ pipeline {
     stage('TF init') {
       steps {
           sh '''
-          cd build
+          #cd build
           #./tf-wrapper.sh init $BRANCH_NAME
           ./tf-wrapper.sh init shared
           '''
@@ -15,7 +15,7 @@ pipeline {
     stage('TF plan') {
       steps {
           sh '''
-          cd build
+          #cd build
           #./tf-wrapper.sh plan $BRANCH_NAME
           ./tf-wrapper.sh plan shared 
           '''
@@ -36,7 +36,7 @@ pipeline {
     stage('TF apply') {
       steps {
           sh '''
-          cd build
+          #cd build
           #./tf-wrapper.sh apply $BRANCH_NAME
           ./tf-wrapper.sh apply shared
           '''
