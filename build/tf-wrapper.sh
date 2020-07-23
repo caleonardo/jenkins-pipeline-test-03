@@ -17,7 +17,7 @@
 action=$1
 branch=$2
 policyrepo=$3
-cd ..  # make base_dir /home/jenkins/jenkins_agent_dir/workspace/pipeline-7-multibranch_develop/ instead of /home/jenkins/jenkins_agent_dir/workspace/pipeline-7-multibranch_develop/build
+#cd ..  # make base_dir /home/jenkins/jenkins_agent_dir/workspace/pipeline-7-multibranch_develop/ instead of /home/jenkins/jenkins_agent_dir/workspace/pipeline-7-multibranch_develop/build
 base_dir=$(pwd)
 environments_regex="^(dev|nonprod|prod|shared)$"
 
