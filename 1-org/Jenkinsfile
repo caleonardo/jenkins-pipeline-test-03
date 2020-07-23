@@ -1,0 +1,46 @@
+pipeline {
+  agent {
+      label "gce-agent"
+  }
+  stages {
+    stage('TF init') {
+      steps {
+          sh '''
+          #cd build
+          #./tf-wrapper.sh init $BRANCH_NAME
+          ./tf-wrapper.sh init shared
+          '''
+      }
+    }
+    stage('TF plan') {
+      steps {
+          sh '''
+          #cd build
+          #./tf-wrapper.sh plan $BRANCH_NAME
+          ./tf-wrapper.sh plan shared 
+          '''
+        }
+    }
+    //stage('TF validate') {
+      //steps {
+      //    sh '''
+      //    echo "BRANCH_NAME: $BRANCH_NAME"
+      //    echo "POLICY_REPO: $POLICY_REPO"
+      //    
+      //    cd build
+      //    #./tf-wrapper.sh validate $BRANCH_NAME $POLICY_REPO
+      //    ./tf-wrapper.sh validate shared https://github.com/caleonardo/jenkins-pipeline-test-03/blob/develop/build/Jenkinsfile
+      //    '''
+      //  }
+    //}
+    stage('TF apply') {
+      steps {
+          sh '''
+          #cd build
+          #./tf-wrapper.sh apply $BRANCH_NAME
+          ./tf-wrapper.sh apply shared
+          '''
+        }
+    }
+  }
+}
