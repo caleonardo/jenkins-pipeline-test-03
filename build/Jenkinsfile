@@ -7,7 +7,8 @@ pipeline {
       steps {
           sh '''
           cd build
-          ./tf-wrapper.sh init $BRANCH_NAME
+          #./tf-wrapper.sh init $BRANCH_NAME
+          ./tf-wrapper.sh init shared
           '''
       }
     }
@@ -15,7 +16,8 @@ pipeline {
       steps {
           sh '''
           cd build
-          ./tf-wrapper.sh plan $BRANCH_NAME
+          #./tf-wrapper.sh plan $BRANCH_NAME
+          ./tf-wrapper.sh plan shared 
           '''
         }
     }
@@ -26,7 +28,8 @@ pipeline {
           echo "POLICY_REPO: $POLICY_REPO"
           
           cd build
-          ./tf-wrapper.sh validate $BRANCH_NAME $POLICY_REPO
+          #./tf-wrapper.sh validate $BRANCH_NAME $POLICY_REPO
+          ./tf-wrapper.sh validate shared
           '''
         }
     }
@@ -34,7 +37,8 @@ pipeline {
       steps {
           sh '''
           cd build
-          ./tf-wrapper.sh apply $BRANCH_NAME
+          #./tf-wrapper.sh apply $BRANCH_NAME
+          ./tf-wrapper.sh apply shared
           '''
         }
     }
