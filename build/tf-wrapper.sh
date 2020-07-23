@@ -139,6 +139,9 @@ single_action_runner() {
       # perform action only if folder matches branch OR folder is shared & branch is prod.
       if [[ "$env" == "$branch" ]] || [[ "$env" == "shared" && "$branch" == "prod" ]]; then
         tf_dir="$base_dir/$component/$env"
+        echo "--------------------------------------"
+        echo "the tf_dir is: ${tf_dir}"
+        echo "--------------------------------------"
         case "$action" in
           apply )
             tf_apply "$tf_dir" "$env"
