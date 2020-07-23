@@ -14,9 +14,22 @@
  * limitations under the License.
  */
 
-terraform {
-  backend "gcs" {
-    bucket = "cft-tfstate-2476"
-    prefix = "terraform/org/state"
-  }
-}
+domains_to_allow = ["mtothel.com"]
+
+billing_data_users = "billing-admins@mtothel.com"
+
+audit_data_users = "google-admins@mtothel.com"
+
+org_id = "889612674382"
+
+billing_account = "00080D-89CF65-59BA66"
+
+terraform_service_account = "org-terraform@cft-seed-fe85.iam.gserviceaccount.com"
+
+default_region = "australia-southeast1"
+
+scc_notification_name = ""
+
+//Optional - for development.  Will place all resources under a specific folder instead of org root
+//parent_folder = "01234567890"
+//scc_notification_filter = "state=\\\"ACTIVE\\\""
