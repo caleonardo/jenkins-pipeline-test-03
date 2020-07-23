@@ -132,6 +132,10 @@ tf_validate() {
 # Runs single action for each instance of env in folder hierarchy.
 single_action_runner() {
   # shellcheck disable=SC2012
+  echo " 1 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+  echo "the $base_dir is: ${$base_dir}"
+  echo " 1 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+
   ls "$base_dir" | while read -r component ; do
     # sort -r is added to ensure shared is first if it exists.
     # shellcheck disable=SC2012
@@ -139,9 +143,9 @@ single_action_runner() {
       # perform action only if folder matches branch OR folder is shared & branch is prod.
       if [[ "$env" == "$branch" ]] || [[ "$env" == "shared" && "$branch" == "prod" ]]; then
         tf_dir="$base_dir/$component/$env"
-        echo "--------------------------------------"
-        echo "the tf_dir is: ${tf_dir}"
-        echo "--------------------------------------"
+        echo " 2 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+        echo echo "the tf_dir is: ${tf_dir}"
+        echo " 2 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
         case "$action" in
           apply )
             tf_apply "$tf_dir" "$env"
