@@ -133,7 +133,8 @@ tf_validate() {
 single_action_runner() {
   # shellcheck disable=SC2012
   echo " 1 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
-  echo "the $base_dir is: ${$base_dir}"
+  echo "the $base_dir is:"
+  echo ${$base_dir}
   echo " 1 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 
   ls "$base_dir" | while read -r component ; do
