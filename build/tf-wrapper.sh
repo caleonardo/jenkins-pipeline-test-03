@@ -80,13 +80,13 @@ case "$1" in
     gcloud auth list
     echo "2 - -----------------------------------"
 
-    echo "3 - CHANGE THE ACCOUT WITH gcloud config set account org-terraform@cft-seed-fe85.iam.gserviceaccount.com"
-    gcloud config set account org-terraform@cft-seed-fe85.iam.gserviceaccount.com
-    echo "3 - -----------------------------------"
+    #echo "3 - CHANGE THE ACCOUT WITH gcloud config set account org-terraform@cft-seed-fe85.iam.gserviceaccount.com"
+    #gcloud config set account org-terraform@cft-seed-fe85.iam.gserviceaccount.com
+    #echo "3 - -----------------------------------"
 
-    echo "3.1 - IMPERSONATE THE TERRAFORM ACCOUNT gcloud config set auth/impersonate_service_account org-terraform@cft-seed-fe85.iam.gserviceaccount.com"
-    gcloud config set auth/impersonate_service_account org-terraform@cft-seed-fe85.iam.gserviceaccount.com
-    echo "3.1 - -----------------------------------"
+    #echo "3.1 - IMPERSONATE THE TERRAFORM ACCOUNT gcloud config set auth/impersonate_service_account org-terraform@cft-seed-fe85.iam.gserviceaccount.com"
+    #gcloud config set auth/impersonate_service_account org-terraform@cft-seed-fe85.iam.gserviceaccount.com
+    #echo "3.1 - -----------------------------------"
 
     echo "4 - SEE THE NEW OUTPUT FOR gcloud auth list"
     gcloud auth list
