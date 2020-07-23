@@ -22,16 +22,16 @@ pipeline {
         }
     }
     stage('TF validate') {
-      steps {
-          sh '''
-          echo "BRANCH_NAME: $BRANCH_NAME"
-          echo "POLICY_REPO: $POLICY_REPO"
-          
-          cd build
-          #./tf-wrapper.sh validate $BRANCH_NAME $POLICY_REPO
-          ./tf-wrapper.sh validate shared
-          '''
-        }
+      //steps {
+      //    sh '''
+      //    echo "BRANCH_NAME: $BRANCH_NAME"
+      //    echo "POLICY_REPO: $POLICY_REPO"
+      //    
+      //    cd build
+      //    #./tf-wrapper.sh validate $BRANCH_NAME $POLICY_REPO
+      //    ./tf-wrapper.sh validate shared https://github.com/caleonardo/jenkins-pipeline-test-03/blob/develop/build/Jenkinsfile
+      //    '''
+      //  }
     }
     stage('TF apply') {
       steps {
