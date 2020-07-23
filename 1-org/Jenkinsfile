@@ -9,7 +9,7 @@ pipeline {
           #cd build
           #./tf-wrapper.sh init $BRANCH_NAME
           echo `pwd`
-          cd ..
+          cd 1-org
           echo `pwd`
           ./tf-wrapper.sh init shared
           '''
@@ -21,7 +21,7 @@ pipeline {
           #cd build
           #./tf-wrapper.sh plan $BRANCH_NAME
           echo `pwd`
-          cd ..
+          cd 1-org
           echo `pwd`
           ./tf-wrapper.sh plan shared 
           '''
@@ -45,7 +45,7 @@ pipeline {
           #cd build
           #./tf-wrapper.sh apply $BRANCH_NAME
           echo `pwd`
-          cd ..
+          cd 1-org
           echo `pwd`
           ./tf-wrapper.sh apply shared
           '''
