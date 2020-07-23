@@ -22,6 +22,9 @@ pipeline {
     stage('TF validate') {
       steps {
           sh '''
+          echo "BRANCH_NAME POLICY_REPO"
+          echo "$BRANCH_NAME $POLICY_REPO"
+          echo $BRANCH_NAME $POLICY_REPO
           cd build
           ./tf-wrapper.sh validate $BRANCH_NAME $POLICY_REPO
           '''
